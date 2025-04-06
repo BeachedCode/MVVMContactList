@@ -6,7 +6,7 @@
              xmlns:models="clr-namespace:ContactList.Models"
              x:DataType="vm:ContactListViewModel"
              Title="ContactList">
-    <ListView x:Name="Lv"  ItemsSource="{Binding Contacts}">
+    <ListView x:Name="Lv"  ItemsSource="{Binding Contacts}" ItemTapped="Lv_ItemTapped">
         <ListView.Header>
             <VerticalStackLayout BackgroundColor="Blue" Padding="5">
                 <Label Text="Contacts" HorizontalOptions="Center" TextColor="AntiqueWhite" FontAttributes="Bold"/>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactList.Views.ContactDetails"
+             xmlns:vm="clr-namespace:ContactList.Models.ViewModels"
+             x:DataType="vm:ContactDetailsViewModel"
+             Title="ContactDetails">
+    <TableView Intent="Data">
+        <TableRoot>
+            <TableSection Title="Contact Information">
+                <TextCell Text="Name" Detail="{Binding Contact.Name}"/>
+                <TextCell Text="Email" Detail="{Binding Contact.Email}"/>
+                <TextCell Text="Phone" Detail="{Binding Contact.Phone}"/>
+                <TextCell Text="Description" Detail="{Binding Contact.Description}"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
