@@ -6,16 +6,28 @@
              xmlns:models="clr-namespace:ContactList.Models"
              x:DataType="vm:ContactListViewModel"
              Title="ContactList">
-    <ListView x:Name="Lv"  ItemsSource="{Binding Contacts}">
-        <ListView.Header>
-            <VerticalStackLayout BackgroundColor="Blue" Padding="5">
-                <Label Text="Contacts" HorizontalOptions="Center" TextColor="AntiqueWhite" FontAttributes="Bold"/>
-            </VerticalStackLayout>
-        </ListView.Header>
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="{x:Type models:Contact}">
-                <TextCell Text="{Binding Name}" Detail="{Binding Email}"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <Grid
+        RowDefinitions="Auto,*"
+        >
+        <ListView x:Name="Lv"  ItemsSource="{Binding Contacts}" ItemTapped="Lv_ItemTapped" Grid.Row="0" HeightRequest="700">
+            <ListView.Header>
+                <VerticalStackLayout BackgroundColor="Blue" Padding="5">
+                    <Label Text="Contacts" HorizontalOptions="Center" TextColor="AntiqueWhite" FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type models:Contact}">
+                    <TextCell Text="{Binding Name}" Detail="{Binding Email}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Grid.Row="1"
+            Margin="20"
+            Text="Go Back"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            Clicked="Button_Clicked"
+            />
+    </Grid>
 </ContentPage>
