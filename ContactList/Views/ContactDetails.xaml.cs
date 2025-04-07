@@ -6,4 +6,9 @@ public partial class ContactDetails : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PopAsync();
+    }
 }
